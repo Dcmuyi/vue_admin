@@ -14,7 +14,7 @@ export default {
     return axios.post('/auth/login', data)
   },
   async logout (data) {
-    return axios.post('/auth/logout', data)
+    return axios.post('/user/user/logout', data)
   },
   async getUserInfo (userId) {
     return axios.get(`/user/user/${userId}`)

@@ -1,3 +1,44 @@
-.flex {
-  display: flex;
+.no-underline {
+  text-decoration:none;
+}
+
+.cf {
+  color: #ffffff;
+}
+
+.tc {
+  text-align: center;
+}
+
+.aside {
+  width: 199px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #324157;
+}
+
+/**
+左侧导航滚动条样式
+ */
+.aside::-webkit-scrollbar{
+  width:5px;
+}
+.aside::-webkit-scrollbar-track{
+  background: #f6f6f6;
+  border-radius:2px;
+}
+.aside::-webkit-scrollbar-thumb{
+  background: #aaa;
+  border-radius:2px;
+}
+.aside::-webkit-scrollbar-thumb:hover{
+  background: #747474;
+}
+.aside::-webkit-scrollbar-corner{
+  background: #f6f6f6;
+}
+
+.contain-index .header {
+  font-size: 20px;
 }
