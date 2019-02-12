@@ -2,15 +2,6 @@ import axios from 'axios'
 
 const MODEL = 'product/product'
 
-function genCacheRequest (url) {
-  let response = null
-  return params => (
-    !response
-      ? (response = axios.get(url, { params }))
-      : response
-  )
-}
-
 export default {
   async query (params) {
     return axios.get(`/${MODEL}`, { params })
@@ -30,10 +21,10 @@ export default {
   async audit (data) {
     return axios.post(`/${MODEL}/audit`, data)
   },
-  async updatePrice (productId, sales) {
-    return axios.post('/product-sale-system/update-price', { productId, ...sales })
+  async getTags (params) {
+    return axios.get('/product/product-tag', { params })
   },
-  getCategories: genCacheRequest(`/${MODEL}-category`),
-  getTags: genCacheRequest(`/${MODEL}-tag`),
-  getDiseases: genCacheRequest(`/${MODEL}/disease-list`)
+  async getManufacturer (params) {
+    return axios.get('/product/manufacture', { params })
+  }
 }
